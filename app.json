@@ -1,0 +1,57 @@
+{
+  "name": "ANNIE",
+  "description": "A telegram CHAT bot",
+  "logo": "https://telegra.ph/file/2c6d1a6f78eba6199933a.jpg",
+  "keywords": [
+    "Chatbot",
+    "mongodb",
+    "python",
+    "pyrogram"
+  ],
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "repository": "https://github.com/doraemon890/ANNIE-X-CHATBOT",
+  "env": {
+    "API_ID": {
+      "description": "Your Telegram API ID",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Your Telegram API hash",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "A Bot token from @BotFather",
+      "required": true
+    },
+    "MONGO_URL": {
+      "description": "Get a mongodb url from https://cloud.mongodb.com.",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Your Telegram user ID (Owner ID)",
+      "required": true
+    },
+    "OWNER_USERNAME": {
+      "description": "Username of the bot owner",
+      "required": true,
+      "value": "JARVIS_V2"
+    },
+    "SUPPORT_GROUP": {
+      "description": "Name of the support group",
+      "required": true,
+      "value": "CHATTING_2024"
+    },
+    "UPDATE_CHANNEL": {
+      "description": "Name of the update channel",
+      "required": true,
+      "value": "JARVIS_X_SUPPORT"
+    }
+  }
+}
