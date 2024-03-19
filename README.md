@@ -10,6 +10,13 @@
 <p align="center"><a href="https://t.me/JARVIS_V2"><img src="https://telegra.ph/file/58afe55fee5ae99d6901b.jpg" width="600"></a></p>
 
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<br>
+
+    ᴜsᴇ ᴘʀᴇᴍɪᴜᴍ ᴍᴏɴɢᴏᴅʙ ғᴏʀ ғᴀsᴛ ʀᴇsᴘᴏɴsᴇ...💗 
+</br>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 <h2 align="center">
     ─「 🦋ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ💗 」─
@@ -34,6 +41,4 @@
 <a href="https://instagram.com/_rajnish_mishra____"><img title="Instagram" src="https://img.shields.io/badge/instagram-%23E4405F.svg?&style=for-the-badge&logo=instagram&logoColor=white"></a>
 <a href="https://t.me/BWANDARLOK"><img title="Support" src="https://img.shields.io/badge/Support-%23000000.svg?&style=for-the-badge&logo=telegram&logoColor=61DAFB"></a>
 </details>
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
