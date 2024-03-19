@@ -19,7 +19,7 @@ logging.getLogger("pyrogram").setLevel(logging.ERROR)
 LOGGER = logging.getLogger(__name__)
 boot = time.time()
 mongo = MongoCli(config.MONGO_URL)
-db = mongo.jarvisxd45
+db = mongo.Anonymous
 OWNER = config.OWNER_ID
 
 class app(Client):
