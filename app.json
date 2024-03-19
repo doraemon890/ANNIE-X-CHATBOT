@@ -43,6 +43,11 @@
       "required": true,
       "value": "JARVIS_V2"
     },
+    "GPT_API": {
+      "description": "Your GPT API Key from OpenAI.",
+      "value": "",
+      "required": true
+    },
     "SUPPORT_GROUP": {
       "description": "Name of the support group",
       "required": true,
