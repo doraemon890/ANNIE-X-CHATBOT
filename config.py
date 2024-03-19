@@ -7,6 +7,7 @@ load_dotenv()
 # Telegram API credentials
 API_ID = os.getenv("API_ID", None)
 API_HASH = os.getenv("API_HASH", None)
+GPT_API = os.getenv("GPT_API")
 
 # Bot token and MongoDB URL fetched from environment variables
 BOT_TOKEN = os.getenv("BOT_TOKEN", None)
