@@ -51,12 +51,12 @@
     "SUPPORT_GROUP": {
       "description": "Name of the support group",
       "required": true,
-      "value": "CHATTING_2024"
+      "value": "Dora_Hub"
     },
     "UPDATE_CHANNEL": {
       "description": "Name of the update channel",
       "required": true,
-      "value": "JARVIS_X_SUPPORT"
+      "value": "JARVIS_V_SUPPORT"
     }
   }
 }
