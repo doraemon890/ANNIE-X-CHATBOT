@@ -1,54 +1,34 @@
 import requests
-from pyrogram import filters
-from pyrogram.types import Message
+from pyrogram import Client, filters
+from pyrogram.types import *
+from ANNIECHATBOT import app
 
-from ANNIECHATBOT  import app
+RAPIDAPI_KEY = "923bca7ccdmsh620363d2a9cf295p15f78bjsnfa1040c941aa"
 
-# Constants
-DOWNLOADING_STICKER_ID = (
-    "CAACAgUAAxkBAAPVZgABdwwsYQ43p3HC5oa7sgr0dxJyAAKZCQAC06xgVfO2MI3ouF1cHgQ"
-)
-API_URL = "https://karma-api2.vercel.app/instadl"  # Replace with your actual API URL
-
-# Function to handle the instadl command
-async def fetch_instagram_video(url: str) -> str:
-    response = requests.get(API_URL, params={"url": url})
-    data = response.json()
-    if "url" in data:
-        return data["url"]
-    else:
-        return None
-
-async def send_instagram_video(message: Message, video_url: str) -> None:
-    if video_url:
-        await message.reply_video(video_url)
-    else:
-        await message.reply_text("No content found in the response.")
-
-async def instadl_command_handler(client, message: Message) -> None:
+@app.on_message(filters.command("insta"))
+async def download_instagram_reel(client, message):
     try:
-        if len(message.command) < 2:
+        if len(message.text.split(" ")) == 1:
             await message.reply_text("Please provide an Instagram link after the command.")
             return
         
-        link = message.command[1]
-
-        # Reply with downloading sticker
-        downloading_sticker = await message.reply_sticker(DOWNLOADING_STICKER_ID)
-
-        # Fetch Instagram video
-        video_url = await fetch_instagram_video(link)
-
-        # Send the video to the user
-        await send_instagram_video(message, video_url)
-
+        url = message.text.split(" ", 1)[1]
+        payload = {"url": url}
+        headers = {
+            "content-type": "application/json",
+            "X-RapidAPI-Key": RAPIDAPI_KEY,
+            "X-RapidAPI-Host": "instagram-bulk-scraper-latest.p.rapidapi.com"
+        }
+        response = requests.post("https://instagram-bulk-scraper-latest.p.rapidapi.com/media_download_from_url", json=payload, headers=headers)
+        
+        if response.status_code == 200:
+            data = response.json()
+            if "content" in data and len(data["content"]) > 0:
+                video_url = data["content"]["url"]
+                await message.reply_video(video_url)
+            else:
+                await message.reply_text("No content found in the response.")
+        else:
+            await message.reply_text(f"Request failed with status code: {response.status_code}")
     except Exception as e:
-        await message.reply_text(f"An error occurred while processing the request: {e}")
-
-    finally:
-        await downloading_sticker.delete()
-
-# Registering the handler
-@app.on_message(filters.command(["ig", "instagram", "insta", "instadl"]))
-async def handle_instadl_command(client, message: Message) -> None:
-    await instadl_command_handler(client, message)
+        await message.reply_text(f"Something went wrong: {e}")
