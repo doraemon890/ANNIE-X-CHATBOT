@@ -17,3 +17,4 @@ python-dotenv
 requests
 telegraph
 tgcrypto==1.2.2
+MukeshAPI
