@@ -1,7 +1,7 @@
 import requests
 from pyrogram import *
 from pyrogram.types import *
-
+from ANNIECHATBOT import app
 @app.on_message(filters.command(["bin", "ccbin", "bininfo"], [".", "!", "/"]))
 async def check_ccbin(client, message):
     if len(message.command) < 2:
