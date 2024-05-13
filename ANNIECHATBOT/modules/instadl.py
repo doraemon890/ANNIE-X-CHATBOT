@@ -1,7 +1,7 @@
 import requests
 from pyrogram import Client, filters
 from pyrogram.types import *
-from ANNIECHATBOT import app
+from ANNIECHATBOT  import app
 
 RAPIDAPI_KEY = "923bca7ccdmsh620363d2a9cf295p15f78bjsnfa1040c941aa"
 
@@ -23,11 +23,12 @@ async def download_instagram_reel(client, message):
         
         if response.status_code == 200:
             data = response.json()
-            if "content" in data and len(data["content"]) > 0:
-                video_url = data["content"]["url"]
+            # Assuming the response structure matches the provided schema
+            if "key1" in data and "key2" in data:
+                video_url = data["key1"]
                 await message.reply_video(video_url)
             else:
-                await message.reply_text("No content found in the response.")
+                await message.reply_text("Invalid response structure.")
         else:
             await message.reply_text(f"Request failed with status code: {response.status_code}")
     except Exception as e:
