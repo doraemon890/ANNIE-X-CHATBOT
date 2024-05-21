@@ -16,6 +16,7 @@ logging.basicConfig(
 )
 
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
+logging.getLogger("pymongo").setLevel(logging.ERROR)
 LOGGER = logging.getLogger(__name__)
 boot = time.time()
 mongo = MongoCli(config.MONGO_URL)
