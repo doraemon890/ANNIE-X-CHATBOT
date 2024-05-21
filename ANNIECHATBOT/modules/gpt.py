@@ -37,7 +37,7 @@ async def chat_gpt(app, message):
         await message.reply_text(f"**Error**: {e}")
 
 # Command for GPT chat with user's name
-@app.on_message(filters.command(["arvis"], prefixes=["j", "J"]))
+@app.on_message(filters.command(["arvis"], prefixes=["z", "Z"]))
 async def chat_arvis(app, message):
     try:
         await app.send_chat_action(message.chat.id, ChatAction.TYPING)
@@ -55,7 +55,7 @@ async def chat_arvis(app, message):
         await message.reply_text(f"**Error**: {e}")
 
 # Command for ANNIE with user's name
-@app.on_message(filters.command(["nnie"], prefixes=["a", "A"]))
+@app.on_message(filters.command(["nnie"], prefixes=["L", "l"]))
 async def chat_annie(app, message):
     try:
         await app.send_chat_action(message.chat.id, ChatAction.TYPING)
