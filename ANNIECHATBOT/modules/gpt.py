@@ -16,7 +16,7 @@ openai.api_key = config.GPT_API
 API_URL = "https://sugoi-api.vercel.app/search"
 
 # Command for GPT chat
-@app.on_message(filters.command(["chatgpt", "ai", "ask", "Master"], prefixes=["+", ".", "/", "-", "?", "$", "#", "&"]))
+@app.on_message(filters.command(["chatgpt", "ai", "ask", "nnie", "iri"], prefixes=["A", ".", "/", "-", "a", "s", "S", "&"]))
 async def chat_gpt(app, message):
     try:
         # Start typing action
@@ -37,7 +37,7 @@ async def chat_gpt(app, message):
         await message.reply_text(f"**Error**: {e}")
 
 # Command for GPT chat with user's name
-@app.on_message(filters.command(["arvis"], prefixes=["j", "J"]))
+@app.on_message(filters.command(["arvis"], prefixes=["z", "Z"]))
 async def chat_arvis(app, message):
     try:
         await app.send_chat_action(message.chat.id, ChatAction.TYPING)
@@ -55,7 +55,7 @@ async def chat_arvis(app, message):
         await message.reply_text(f"**Error**: {e}")
 
 # Command for ANNIE with user's name
-@app.on_message(filters.command(["nnie"], prefixes=["A", "a"]))
+@app.on_message(filters.command(["nnie"], prefixes=["o", "O"]))
 async def chat_annie(app, message):
     try:
         await app.send_chat_action(message.chat.id, ChatAction.TYPING)
