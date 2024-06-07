@@ -110,22 +110,3 @@ async def repo_command_handler(_, m: Message):
     )
 
 ##########################################################
-
-WELCOME_IMG = [
-    "https://telegra.ph/file/61670d3373f2c8bdc2bcb.png",
-    "https://telegra.ph/file/74d333a2eb853d6d340e5.png",
-    "https://telegra.ph/file/e29c7352ac8a29c6d7d1c.png",
-    "https://telegra.ph/file/024c4d788089a549f7c18.png",
-    "https://telegra.ph/file/21a6c46b6b997c9baa507.png",
-    "https://telegra.ph/file/e4205a5896e9cd1354df4.png",
-    "https://telegra.ph/file/ceaee4640a3af5acdb717.png",
-    "https://telegra.ph/file/98f40c919b0598586d697.png",
-    "https://graph.org/file/36af423228372b8899f20.jpg",
-]
-
-WELCOME_TXT= "ᴀᴀ ɢʏᴇ ᴀᴀᴘ💗 , ᴀᴀᴘ ʜɪ ᴋᴀ ɪɴᴛᴢᴀᴀʀ ᴛʜᴀ...ᴀʙʙ ᴊᴀɴᴀ ᴍᴀᴛ ᴋᴀʜɪ ʏʜɪ ʀᴀʜᴏ ᴀᴜʀ ᴍᴇʀᴇ sᴀᴛʜ ᴄʜᴀᴛᴛɪɴɢ ᴋʀᴏ🤭🫠😅"
-# Welcome message for new chat members
-@app.on_message(filters.new_chat_members)
-async def welcome_message(_, m: Message):
-    for member in m.new_chat_members:
-        await m.reply_photo(photo=random.choice(WELCOME_IMG), caption=WELCOME_TXT)
