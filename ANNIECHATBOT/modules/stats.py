@@ -5,11 +5,11 @@ from ANNIECHATBOT import OWNER, app
 from ANNIECHATBOT.database.chats import get_served_chats
 from ANNIECHATBOT.database.users import get_served_users
 
-logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 async def fetch_stats():
     try:
+        logger.debug("Fetching served users and chats...")
         users_count = len(await get_served_users())
         chats_count = len(await get_served_chats())
         return users_count, chats_count
@@ -27,6 +27,8 @@ async def format_stats_message(cli: Client, users: int, chats: int) -> str:
 
 @app.on_message(filters.command("stats") & filters.user(OWNER))
 async def stats(cli: Client, message: Message):
+    logger.debug("Received stats command.")
     users_count, chats_count = await fetch_stats()
     stats_message = await format_stats_message(cli, users_count, chats_count)
     await message.reply_text(stats_message)
+    logger.debug("Stats message sent.")
