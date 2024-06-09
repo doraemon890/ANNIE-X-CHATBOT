@@ -1,16 +1,21 @@
 import asyncio
 import importlib
+import logging
 
 from pyrogram import idle
 
 from ANNIECHATBOT import LOGGER, app
 from ANNIECHATBOT.modules import ALL_MODULES
 
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
 async def jarvis_boot():
     try:
+        logger.debug("Starting bot...")
         await app.start()
     except Exception as ex:
-        LOGGER.error(ex)
+        logger.error(f"Failed to start the bot: {ex}")
         quit(1)
 
     for all_module in ALL_MODULES:
@@ -20,9 +25,9 @@ async def jarvis_boot():
     import ANNIECHATBOT.modules.broadcast
     import ANNIECHATBOT.modules.stats
 
-    LOGGER.info(f"@{app.username} Started.")
+    logger.debug(f"Bot @{app.username} started.")
     await idle()
 
 if __name__ == "__main__":
     asyncio.get_event_loop().run_until_complete(jarvis_boot())
-    LOGGER.info("Stopping app Bot...")
+    logger.info("Stopping app Bot...")
