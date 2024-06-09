@@ -22,5 +22,5 @@ async def jarvis_boot():
 
 
 if __name__ == "__main__":
-    asyncio.get_event_loop().run_until_complete(jarvis_boot())
+    asyncio.get_event_loop().run_until_complete(jarvis_boot()) 
     LOGGER.info("Stopping app Bot...")
