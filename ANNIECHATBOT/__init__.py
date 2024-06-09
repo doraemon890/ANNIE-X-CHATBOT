@@ -1,6 +1,7 @@
-import logging
+import logging 
 import time
-from Abg import patch 
+from Abg import patch
+
 from motor.motor_asyncio import AsyncIOMotorClient as MongoCli
 from pyrogram import Client
 from pyrogram.enums import ParseMode
@@ -40,9 +41,9 @@ class app(Client):
         self.name = self.me.first_name + " " + (self.me.last_name or "")
         self.username = self.me.username
         self.mention = self.me.mention
-        LOGGER.info(f"Bot started as @{self.username}")
 
     async def stop(self):
         await super().stop()
+
 
 app = app()
