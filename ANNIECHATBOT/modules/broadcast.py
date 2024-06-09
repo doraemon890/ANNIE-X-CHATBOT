@@ -1,5 +1,5 @@
 from pyrogram import filters, Client
-from ANNIECHATBOT import app, OWNER, bot
+from ANNIECHATBOT import app, OWNER  # Import app and OWNER only
 from .chats import get_served_chats
 from .users import get_served_users
 from pyrogram.types import Message
@@ -29,13 +29,13 @@ async def broadcast_message(message: Message):
 
 async def send_media_message(chat_id: int, message: Message):
     if message.text:
-        await bot.send_message(chat_id, message.text)
+        await app.send_message(chat_id, message.text)
     elif message.photo:
-        await bot.send_photo(chat_id, photo=message.photo.file_id, caption=message.caption)
+        await app.send_photo(chat_id, photo=message.photo.file_id, caption=message.caption)
     elif message.video:
-        await bot.send_video(chat_id, video=message.video.file_id, caption=message.caption)
+        await app.send_video(chat_id, video=message.video.file_id, caption=message.caption)
     elif message.document:
-        await bot.send_document(chat_id, document=message.document.file_id, caption=message.caption)
+        await app.send_document(chat_id, document=message.document.file_id, caption=message.caption)
     # Add support for more media types as needed
 
 @app.on_message(filters.command("broadcast") & filters.user(OWNER))
