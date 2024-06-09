@@ -1,7 +1,7 @@
 from pyrogram import filters, Client
 from ANNIECHATBOT import app, OWNER  # Import app and OWNER only
-from .chats import get_served_chats
-from .users import get_served_users
+from ANNIECHATBOT.database.chats import get_served_chats
+from ANNIECHATBOT.database.users import get_served_users
 from pyrogram.types import Message
 
 async def broadcast_message(message: Message):
