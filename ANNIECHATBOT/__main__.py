@@ -16,8 +16,9 @@ async def jarvis_boot():
     for all_module in ALL_MODULES:
         importlib.import_module("ANNIECHATBOT.modules." + all_module)
 
-    # Import broadcast to ensure the command handler is registered
+    # Import broadcast and stats to ensure the command handlers are registered
     import ANNIECHATBOT.modules.broadcast
+    import ANNIECHATBOT.modules.stats
 
     LOGGER.info(f"@{app.username} Started.")
     await idle()
