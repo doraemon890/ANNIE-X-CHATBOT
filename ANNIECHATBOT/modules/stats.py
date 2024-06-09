@@ -5,7 +5,6 @@ from ANNIECHATBOT import OWNER, app
 from ANNIECHATBOT.database.chats import get_served_chats
 from ANNIECHATBOT.database.users import get_served_users
 
-
 @app.on_message(filters.command("stats") & filters.user(OWNER))
 async def stats(cli: Client, message: Message):
     users = len(await get_served_users())
