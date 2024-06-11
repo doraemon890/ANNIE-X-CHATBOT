@@ -49,7 +49,7 @@ STICKER = [
 
 
 
-@app.on_cmd("Annieping")
+@app.on_cmd("alive")
 async def ping(_, message: Message):
     await message.reply_sticker(sticker=random.choice(STICKER))
     start = datetime.now()
