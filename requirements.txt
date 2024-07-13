@@ -11,7 +11,7 @@ motor
 opencv-python
 openai==0.28.0
 pillow==10.2.0
-pyrogram==2.0.106
+git+https://github.com/doraemon890/pyrogram
 pymongo
 python-dotenv
 requests
